@@ -1,17 +1,13 @@
 {
-  "name": "02-homework",
+  "name": "02-hw-backup",
   "version": "1.0.0",
-  "description": "Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
-
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seeds": "node seeds/index.js"
-
   },
-  
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -21,11 +17,23 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
-    "mysql2": "^2.3.2",
+    "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0"
   },
   "devDependencies": {
     "jest": "^27.3.1",
     "nodemon": "^2.0.14"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhil-kharbanda/UofT_TechBlog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikhil-kharbanda/UofT_TechBlog/issues"
+  },
+  "homepage": "https://github.com/nikhil-kharbanda/UofT_TechBlog#readme",
+  "description": ""
 }
