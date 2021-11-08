@@ -1,0 +1,24 @@
+{{!-- <div class="card">
+    <div class="card-header">
+        <h4><a class="link" href="/post/{{id}}">{{title}}</a></h4>
+        <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+    </div>
+        <p class="card-body">{{content}}</p>
+</div>
+
+
+ --}}
+
+<div class="card text-center">
+  <div class="card-header">
+    <h4><a class="link" href="/post/{{id}}">{{title}}</a></h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{content}}</h5>
+    <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+    <a href="#" class="btn btn-primary">Go Comment</a>
+  </div>
+  <div class="card-footer text-muted">
+    <!--Add date-->
+  </div>
+</div>
