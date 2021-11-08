@@ -3,7 +3,6 @@ const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
 class User extends Model {
-  // set up method to run on instance data (per user) to check password
   checkPassword(loginPW) {
     return bcrypt.compareSync(loginPW, this.password);
   }
@@ -13,7 +12,6 @@ User.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -26,7 +24,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // this means the password must be at least four characters long
         len: [6],
       },
     },

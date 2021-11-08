@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
       },
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "user_id", "post_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -22,8 +22,9 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((data) => res.json(data.reverse()))
+    .then((postData) => res.json(postData.reverse()))
     .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
@@ -41,7 +42,7 @@ router.get("/:id", (req, res) => {
       },
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "user_id", "post_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -49,12 +50,12 @@ router.get("/:id", (req, res) => {
       },
     ],
   })
-    .then((data) => {
-      if (!data) {
+    .then((postData) => {
+      if (!postData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
-      res.json(data);
+      res.json(postData);
     })
     .catch((err) => {
       res.status(500).json(err);
@@ -67,7 +68,7 @@ router.post("/", withAuth, (req, res) => {
     content: req.body.content,
     user_id: req.session.user_id,
   })
-    .then((data) => res.json(data))
+    .then((postData) => res.json(postData))
     .catch((err) => {
       res.status(500).json(err);
     });
@@ -85,12 +86,12 @@ router.put("/:id", withAuth, (req, res) => {
       },
     }
   )
-    .then((data) => {
-      if (!data) {
+    .then((postData) => {
+      if (!postData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
-      res.json(data);
+      res.json(postData);
     })
     .catch((err) => {
       res.status(500).json(err);
@@ -103,12 +104,12 @@ router.delete("/:id", withAuth, (req, res) => {
       id: req.params.id,
     },
   })
-    .then((data) => {
-      if (!data) {
+    .then((postData) => {
+      if (!postData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
-      res.json(data);
+      res.json(postData);
     })
     .catch((err) => {
       res.status(500).json(err);
