@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
   })
     .then((postData) => {
       const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("", { posts, loggedIn: req.session.loggedIn }); //Render to homepage
+      res.render("homepage", { posts, loggedIn: req.session.loggedIn }); //Render to homepage
     })
     .catch((err) => {
       res.status(500).json(err);
@@ -34,11 +34,11 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render(""); //render login
+  res.render("login"); //render login
 });
 
 router.get("/signup", (req, res) => {
-  res.render(""); //render signup
+  res.render("signup"); //render signup
 });
 
 router.get("/post/:id", (req, res) => {
@@ -70,7 +70,7 @@ router.get("/post/:id", (req, res) => {
 
       const post = postData.get({ plain: true });
 
-      res.render("", { post, loggedIn: req.session.loggedIn }); //render single-post
+      res.render("singlepost", { post, loggedIn: req.session.loggedIn }); //render single-post
     })
     .catch((err) => {
       res.status(500).json(err);
@@ -105,7 +105,7 @@ router.get("/posts-comments", (req, res) => {
       }
       const post = postData.get({ plain: true });
 
-      res.render("", { post, loggedIn: req.session.loggedIn }); //render post-comments
+      res.render("posts-comments", { post, loggedIn: req.session.loggedIn }); //render post-comments
     })
     .catch((err) => {
       res.status(500).json(err);
