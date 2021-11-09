@@ -12,6 +12,7 @@ Comment.init(
     },
     comment_text: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -34,7 +35,7 @@ Comment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "comment",
+    modelName: "comment"
   }
 );
 

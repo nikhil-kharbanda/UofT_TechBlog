@@ -24,19 +24,19 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6],
+        len: [5],
       },
     },
   },
 
   {
     hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password.data, 10);
+      beforeCreate: async(newUserData)=> {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
         console.log(newUserData.password);
         return newUserData;
       },
-      async beforeUpdate(updateUserData) {
+    beforeUpdate: async (updateUserData)=> {
         updateUserData.password = await bcrypt.hash(updateUserData.password, 10);
         return updateUserData;
       },
@@ -46,7 +46,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "user"
   }
 );
 

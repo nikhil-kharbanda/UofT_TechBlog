@@ -26,9 +26,10 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((postData) => {
       const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("", { posts, loggedIn: true }); //render dashboard
+      res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
@@ -60,9 +61,10 @@ router.get("/edit/:id", withAuth, (req, res) => {
         return;
       }
       const post = postData.get({ plain: true });
-      res.render("edit-post", { post, loggedIn: true });
+      res.render("", { post, loggedIn: true }); //render to edit post
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });

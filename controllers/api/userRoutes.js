@@ -49,7 +49,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/users", (req, res) => {
   User.create({
     username: req.body.username,
     password: req.body.password,
