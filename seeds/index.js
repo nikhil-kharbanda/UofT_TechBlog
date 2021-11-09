@@ -19,3 +19,37 @@ const seedAll = async () => {
   };
   
   seedAll();
+
+// const sequelize = require('../config/connection');
+// const { User, Post, Comment } = require('../models');
+
+// const userData = require('./userSeeds.json');
+// const postData = require('./postSeeds.json');
+// const commentData = require('./commentSeeds.json');
+
+// const seedDatabase = async () => {
+//   await sequelize.sync({ force: true });
+
+
+//   const comments = await Comment.bulkCreate(commentData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
+//   console.log(comments);
+
+//   const users = await User.bulkCreate(userData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
+//   console.log(users);
+
+//   const posts = await Post.bulkCreate(postData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
+//   console.log(posts);
+
+//   process.exit(0);
+// }
+
+// seedDatabase();
