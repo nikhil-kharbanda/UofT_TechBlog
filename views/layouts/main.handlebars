@@ -18,7 +18,15 @@
 
       <div class="jumbotron jumbotron-fluid">
 
-        <h1 class="display-3" style = "margin:5px">Tech Blog</h1>
+        <h1 class="display-3" style="margin:5px">Tech Blog</h1>
+
+        {{#if loggedIn}}
+          <h1 class="display-5" style="margin:5px">Welcome {{username}}</h1>
+        {{/if}}
+
+        {{#unless loggedIn}}
+          <h1 class="display-5" style="margin:5px">Please Login</h1>
+        {{/unless}}
 
         <ul class="nav nav-pills">
           <li class="nav-item">
@@ -27,16 +35,16 @@
           <li class="nav-item">
             <a class="nav-link" href="/dashboard">Dashboard</a>
           </li>
-           {{#unless loggedIn}}
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-             {{/unless}}
- {{#if loggedIn}}
+          {{#unless loggedIn}}
             <li class="nav-item">
-            <button class="nav-link" id="logout" >Logout</button>
-          </li>
-            {{/if}}
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          {{/unless}}
+          {{#if loggedIn}}
+            <li class="nav-item">
+              <button class="nav-link" id="logout">Logout</button>
+            </li>
+          {{/if}}
         </ul>
       </div>
 

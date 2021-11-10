@@ -26,7 +26,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((postData) => {
       const posts = postData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
+      res.render("dashboard", { posts, loggedIn: req.session.loggedIn, username:req.session.username});
     })
     .catch((err) => {
       console.log(err);
@@ -61,7 +61,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
         return;
       }
       const post = postData.get({ plain: true });
-      res.render("editpost", { post, loggedIn: true });
+      res.render("editpost", { post, loggedIn: true, username:req.session.username });
     })
     .catch((err) => {
       console.log(err);
