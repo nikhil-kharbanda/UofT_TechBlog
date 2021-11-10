@@ -83,7 +83,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
 
 //Create a new post
 router.get("/new", (req, res) => {
-  res.render("newpost");
+  res.render("newpost", {loggedIn: true, username:req.session.username});
 });
 
 module.exports = router;

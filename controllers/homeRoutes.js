@@ -122,7 +122,7 @@ router.get("/postscomments", (req, res) => {
        // serialize the data
       const post = postData.get({ plain: true });
       //
-      res.render("", { post, loggedIn: req.session.loggedIn });
+      res.render("", { post, loggedIn: req.session.loggedIn, username:req.session.username});
     })
     .catch((err) => {
       res.status(500).json(err);
