@@ -1,4 +1,3 @@
-
 <h1 align="center">Tech Blog </h1>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <br />
@@ -37,7 +36,12 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
   N/A
 
 ## Image
-    ![Image](MainPage.png)
+![WelcomePage](Assets/images/MainPage.png)   
+
+![EditingComment](Assets/images/EditingComment.PNG)
+
+![Dashboard](Assets/images/Dashboard.PNG)
+
 
 ## Link
 
