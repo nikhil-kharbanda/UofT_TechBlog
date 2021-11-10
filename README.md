@@ -37,7 +37,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
   N/A
 
 ## Image
-    ![Image](../Assets/images/MainPage.PNG)
+    ![Image](Assets/images/MainPage.PNG)
 
 ## Link
 
