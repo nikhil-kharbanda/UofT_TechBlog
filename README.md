@@ -44,6 +44,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 
 ## Link
+https://uoft-techblog.herokuapp.com/
 
 ## About the developer 
   nikhil-kharbanda <br >
