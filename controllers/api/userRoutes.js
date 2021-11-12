@@ -32,10 +32,10 @@ router.get("/:id", (req, res) => {
         model: Post,
         attributes: ["id", "title", "content", "created_at"],
       },
-      {
-        model: Post,
-        attributes: ["title"],
-      },
+      // {
+      //   model: Post,
+      //   attributes: ["title"],
+      // },
     ],
   })
     .then((dbUserData) => {
