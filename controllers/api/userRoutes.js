@@ -32,10 +32,6 @@ router.get("/:id", (req, res) => {
         model: Post,
         attributes: ["id", "title", "content", "created_at"],
       },
-      // {
-      //   model: Post,
-      //   attributes: ["title"],
-      // },
     ],
   })
     .then((dbUserData) => {
@@ -80,13 +76,13 @@ router.post("/login", (req, res) => {
   })
     .then((userData) => {
       if (!userData) {
-        res.status(400).json({ message: "No user with that username!" });
+        res.status(400).json({ message: "Invalid Credentials" });
         return;
       }
       const validPassword = userData.checkPassword(req.body.password);
 
       if (!validPassword) {
-        res.status(400).json({ message: "Incorrect password!" });
+        res.status(400).json({ message: "Invalid Credentials" });
         return;
       }
       req.session.save(() => {
