@@ -21,7 +21,18 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
   - [Deployed Link](#link)
 
 ## Installation
-  Start by running the schema.sql file. Use npm init, and npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session mysql2 sequelize. Use npm i -D jest nodemon
+
+  git clone https://github.com/nikhil-kharbanda/UofT_TechBlog.git
+  
+  This program can be run through a browser using the above link to the deployed application. Alternatively, to run this application locally you will need to:
+
+  Clone this repository to receive all of the files (git clone https://github.com/nikhil-kharbanda/UofT_TechBlog.git)
+  Set up your environment variables in a .env file
+  Run "npm install" in the command line of your terminal to set up all of the dependencies
+  Initialize your database by running the "schema.sql" file with MySQL
+  Populate the existing database items by running "npm run seed" in your terminal
+  Run "npm start" to start the application's connection
+  Go to the url of the application (http//:localhost:3001) to begin using it
 
 ## Purpose
   Purpose of this project is to have some practice with routing, as well as having the experience of becoming a full-stack developer
