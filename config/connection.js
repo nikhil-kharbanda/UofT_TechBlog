@@ -3,7 +3,16 @@ require("dotenv").config();
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
+if (process.env.DATABASE_URL) {
+  // Render Postgres (or any hosted DB given as a connection URL)
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    logging: false,
+    dialectOptions:
+      process.env.DB_SSL === "true"
+        ? { ssl: { require: true, rejectUnauthorized: false } }
+        : {},
+  });
+} else if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
