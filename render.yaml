@@ -6,14 +6,10 @@ services:
     buildCommand: npm install
     startCommand: npm start
     envVars:
+      # Aiven MySQL Service URI (without the ?ssl-mode=REQUIRED suffix)
       - key: DATABASE_URL
-        fromDatabase:
-          name: techblog-db
-          property: connectionString
+        sync: false
+      - key: DB_SSL
+        value: "true"
       - key: SESSION_SECRET
         generateValue: true
-
-databases:
-  - name: techblog-db
-    plan: free
-    databaseName: techblogdb

@@ -4,12 +4,12 @@ require("dotenv").config();
 let sequelize;
 
 if (process.env.DATABASE_URL) {
-  // Render Postgres (or any hosted DB given as a connection URL)
+  // Hosted MySQL (e.g. Aiven) given as a connection URL
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     logging: false,
     dialectOptions:
       process.env.DB_SSL === "true"
-        ? { ssl: { require: true, rejectUnauthorized: false } }
+        ? { ssl: { rejectUnauthorized: false } }
         : {},
   });
 } else if (process.env.JAWSDB_URL) {
